@@ -1,0 +1,20 @@
+{
+    "name": "utente/app_meteo",
+    "autoload": {
+        "psr-4": {
+            "Utente\\AppMeteo\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Federico",
+            "email": "federico.grasso606@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9",
+        "vlucas/phpdotenv": "^5.6",
+        "symfony/cache": "^7.2",
+        "symfony/serializer": "^7.2"
+    }
+}
