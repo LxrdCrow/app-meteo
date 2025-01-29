@@ -2,10 +2,10 @@ require_once 'config/dotenv.php';
 
 function getDatabaseConnection() {
     // Parametri di connessione
-    $host = getenv('DB_HOST'); // Ottieni l'host dal file .env
-    $db   = getenv('DB_NAME'); // Ottieni il nome del database
-    $user = getenv('DB_USER'); // Ottieni l'username dal file .env
-    $pass = getenv('DB_PASSWORD'); // Ottieni la password dal file .env
+    $host = getenv('DB_HOST'); 
+    $db   = getenv('DB_NAME'); 
+    $user = getenv('DB_USER'); 
+    $pass = getenv('DB_PASSWORD'); 
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
