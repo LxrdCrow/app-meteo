@@ -1,0 +1,16 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+<FilesMatch "\.(env|htaccess|ini|log|sql|bak|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+RewriteRule ^(src|config|storage|tests) - [F,L]
+
+Options -Indexes
+
