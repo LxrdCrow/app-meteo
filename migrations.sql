@@ -1,9 +1,10 @@
 -- create users table --
 CREATE TABLE users (
-    id INT AUTO_INCREM50ENT PRIMARY KEY,
-    username VARCHAR(),
-    email VARCHAR(100),
-    password_hash VARCHAR(255)
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- create locations table --
@@ -42,3 +43,4 @@ CREATE TABLE user_preferences (
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (location_id) REFERENCES locations(id)
 );
+
