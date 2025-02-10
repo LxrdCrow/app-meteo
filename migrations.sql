@@ -1,7 +1,7 @@
 -- create users table --
 CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50),
+    id INT AUTO_INCREM50ENT PRIMARY KEY,
+    username VARCHAR(),
     email VARCHAR(100),
     password_hash VARCHAR(255)
 );
