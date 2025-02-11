@@ -3,11 +3,10 @@
 require_once 'config/dotenv.php';
 
 function getDatabaseConnection() {
-    // Parameters to connect to the database
-    $host = getenv('DB_HOST'); 
-    $db   = getenv('DB_NAME'); 
-    $user = getenv('DB_USER'); 
-    $pass = getenv('DB_PASSWORD'); 
+    $host = $_ENV['DB_HOST'] ?? 'localhost';
+    $db   = $_ENV['DB_NAME'] ?? 'database';
+    $user = $_ENV['DB_USER'] ?? 'root';
+    $pass = $_ENV['DB_PASSWORD'] ?? '';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -19,8 +18,8 @@ function getDatabaseConnection() {
 
     try {
         return new PDO($dsn, $user, $pass, $options);
-    } catch (\PDOException $e) {
-        throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    } catch (PDOException $e) {
+        error_log("Database Connection Error: " . $e->getMessage());
+        return null; 
     }
 }
-?>
