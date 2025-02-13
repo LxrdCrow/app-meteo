@@ -9,25 +9,34 @@ class UserController {
         $this->userModel = new User($pdo);
         session_start(); 
     }
-
     
     public function registerUser($username, $password) {
+        require_once __DIR__ . '/../Helpers/validator.php'; 
+    
         
-        if (empty($username) || empty($password)) {
+        if (!validateUsername($username)) {
             http_response_code(400);
-            echo json_encode(["error" => "Username and password are required"]);
+            echo json_encode(["error" => "Invalid username"]);
             return;
         }
-
+        if (!validatePassword($password)) {
+            http_response_code(400);
+            echo json_encode(["error" => "Weak password"]);
+            return;
+        }
+    
         
         if ($this->userModel->getUserByUsername($username)) {
             http_response_code(409); // 409 = Conflict
             echo json_encode(["error" => "User already exists"]);
             return;
         }
-
+    
         
-        if ($this->userModel->addUser($username, $password)) {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+        
+        if ($this->userModel->addUser($username, $hashedPassword)) {
             http_response_code(201); // 201 = Created
             echo json_encode(["message" => "User registered successfully"]);
         } else {

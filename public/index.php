@@ -1,5 +1,8 @@
 <?php
 
+require_once __DIR__ . '/Helpers/ErrorHandler.php';
+
+
 if ($_ENV['APP_ENV'] === 'local') {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
