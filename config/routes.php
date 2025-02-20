@@ -10,22 +10,22 @@ $router->addRoute("GET", "/", function() {
 });
 
 $router->addRoute("GET", "/meteo", function() {
-    echo "Pagina meteo";
+    echo "Get forecast";
 });
 
 
 $router->addRoute("POST", "/meteo", function() {
-    echo "Aggiunta nuova previsione meteo";
+    echo "Forecast saved"; 
 });
 
 
 $router->addRoute("PUT", "/meteo", function() {
-    echo "Previsione meteo aggiornata";
+    echo "Forecast updated";
 });
 
 
 $router->addRoute("DELETE", "/meteo", function() {
-    echo "Previsione meteo eliminata";
+    echo "Forecast deleted";
 });
 
 ?>
