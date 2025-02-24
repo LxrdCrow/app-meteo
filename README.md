@@ -42,8 +42,8 @@ app-meteo/
 
 ### 1️⃣ **Clone the Repository**
 ```sh
-git clone https://github.com/LxrdCrow/app-meteo.git
-cd app-meteo
+git clone https://github.com/LxrdCrow/weather-app.git
+cd weather-app
 ```
 
 ### 2️⃣ **Install Dependencies**
@@ -55,7 +55,7 @@ composer install
 Create a `.env` file in the root directory and configure it as follows:
 ```env
 DB_HOST=localhost
-DB_NAME=app_meteo
+DB_NAME=weather_app
 DB_USER=root
 DB_PASSWORD=
 API_KEY=your_openweathermap_api_key
@@ -67,7 +67,7 @@ BASE_URL=http://localhost:8000
 ### 4️⃣ **Configure the Database**
 Create a MySQL database and import the `database.sql` file:
 ```sh
-mysql -u root -p app_meteo < database.sql
+mysql -u root -p weather_app < database.sql
 ```
 
 ### 5️⃣ **Run the Application**
@@ -138,7 +138,5 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 ## 📜 **License**
 This project is licensed under the **MIT License**.
 ```
-
----
 
 
