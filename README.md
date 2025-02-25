@@ -7,7 +7,7 @@ It retrieves real-time weather data using OpenWeatherMap and allows users to sto
 
 ## 📂 **Project Structure**
 ```
-app-meteo/
+weather-app/
  ├── config/             # Configuration files (database, environment)
  │    ├── config.php     # Returns configuration settings
  │    ├── dotenv.php     # Loads environment variables
